@@ -2,7 +2,7 @@
 import path from 'path';
 
 import compression from 'compression';
-import express from 'express';
+import express from 'express'; 
 import morgan from 'morgan';
 
 import renderMiddleware from './middleware/render';
