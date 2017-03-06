@@ -4,7 +4,7 @@ import Routes from '../routes';
 const Body = ({ data }) => (
   <div className="wrapper"> 
     {
-      data.current_page.attributes.start_page !== true ?
+      (data.current_page && data.current_page.attributes.start_page !== true) ?
         <div className="container">
           <div className="row">
             <div className="col-sm-12">

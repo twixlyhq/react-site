@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Category = ({params, pathname, location, pattern}) => (
+const Category = ({ location, match }) => (
   <div>
-    <h1>Category - {pathname} - {params}</h1>
+    <h1>Category - { match.params.slug }</h1>
   </div>
 );
 

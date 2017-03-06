@@ -12,7 +12,7 @@ const LayoutDefault = ({data}) => {
           {charSet: "utf-8"},
           {name: "viewport", content: "width=device-width, initial-scale=1"}
         ]}
-        title={data.current_page.attributes.display_name} />
+        title={ data.current_page ? data.current_page.attributes.display_name : 'goga' } />
       <Header data={data} />
       <Body data={data} />
     </div>

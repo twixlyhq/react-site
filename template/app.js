@@ -15,7 +15,7 @@ const App = ({location}) => {
   if (!data.current_page) {
     console.log(url);
     console.log('NO DATA');
-    return false;
+    // return false;
   }
   
   return (
