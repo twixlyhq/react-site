@@ -1,0 +1,54 @@
+{
+  "name": "react-starter",
+  "version": "0.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "analyze": "webpack --config webpack/webpack.client.babel.js --profile --json > stats.json",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "webpack --progress --config webpack/webpack.client.babel.js",
+    "build:server": "webpack --progress --config webpack/webpack.server.babel.js",
+    "dev": "npm run build:server && node build/server",
+    "lint": "eslint --ignore-path .gitignore .",
+    "prebuild": "rimraf build/*",
+    "start": "node build/server"
+  },
+  "devDependencies": {
+    "babel-cli": "6.23.0",
+    "eslint": "3.17.0",
+    "eslint-config-airbnb": "14.1.0",
+    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-jsx-a11y": "4.0.0",
+    "eslint-plugin-react": "6.10.0"
+  },
+  "dependencies": {
+    "assets-webpack-plugin": "3.5.1",
+    "babel-loader": "6.3.2",
+    "babel-plugin-transform-react-remove-prop-types": "0.3.2",
+    "babel-preset-es2015": "6.22.0",
+    "babel-preset-react": "6.23.0",
+    "compression": "1.6.2",
+    "eslint-plugin-react": "6.9.0",
+    "express": "4.15.0",
+    "file-loader": "0.10.1",
+    "memory-cache": "0.1.6",
+    "morgan": "1.8.1",
+    "node-async-locks": "1.0.1",
+    "react": "15.4.2",
+    "react-dom": "15.4.2",
+    "react-helmet": "3.2.3",
+    "react-router-dom": "4.0.0-beta.7",
+    "rimraf": "2.6.1",
+    "styled-components": "2.0.0-6",
+    "superagent": "3.3.1",
+    "twixly": "0.0.18",
+    "url-loader": "0.5.8",
+    "webpack": "2.2.1",
+    "webpack-dev-middleware": "1.10.0",
+    "webpack-hot-middleware": "2.17.1",
+    "webpack-md5-hash": "0.0.5",
+    "webpack-node-externals": "1.5.4"
+  }
+}
