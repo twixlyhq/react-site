@@ -13,7 +13,7 @@
     "dev": "npm run build:server && node build/server",
     "lint": "eslint --ignore-path .gitignore .",
     "prebuild": "rimraf build/*",
-    "postinstall": "npm run build",
+    "postinstall": "npm run build", 
     "start": "node build/server"
   },
   "devDependencies": {
