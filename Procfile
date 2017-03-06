@@ -1,1 +1,1 @@
-web: npm run build:client && npm run build:server && node build/server.js
+web: npm run build && node build/server.js
