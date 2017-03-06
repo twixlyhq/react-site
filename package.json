@@ -7,13 +7,13 @@
   },
   "scripts": {
     "analyze": "webpack --config webpack/webpack.client.babel.js --profile --json > stats.json",
-    "build": "npm run build:client && npm run build:server --runtimeDir=/app",
+    "build": "npm run build:client && npm run build:server",
     "build:client": "webpack --progress --config webpack/webpack.client.babel.js",
     "build:server": "webpack --progress --config webpack/webpack.server.babel.js",
     "dev": "npm run build:server && node build/server",
     "lint": "eslint --ignore-path .gitignore .",
-    "prebuild": "rimraf build/* --runtimeDir=/app",
-    "start": "node build/server --runtimeDir=/app"
+    "prebuild": "rimraf build/*",
+    "start": "node build/server"
   },
   "devDependencies": {
     "babel-cli": "6.23.0",
