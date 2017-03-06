@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "engines": {
-    "node": ">=4"
+    "node": "6.1.0",
+    "npm": "4.0.5"
   },
   "scripts": {
     "analyze": "webpack --config webpack/webpack.client.babel.js --profile --json > stats.json",
@@ -13,7 +14,6 @@
     "dev": "npm run build:server && node build/server",
     "lint": "eslint --ignore-path .gitignore .",
     "prebuild": "rimraf build/*",
-    "prestart": "rimraf build/*",
     "start": "node build/server"
   },
   "devDependencies": {
