@@ -8,7 +8,7 @@ const Blog = ({data, location}) => (
     {
       console.log(location)
     }
-    <h1>{data.current_page.attributes.display_name}</h1>
+    <h1 className="title-lg"><span>{ data.current_page.attributes.title }</span></h1>
     <Route path="/blogg/category/:slug" component={Category} />
   </div>
 );
