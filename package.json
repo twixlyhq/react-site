@@ -13,7 +13,7 @@
     "dev": "npm run build:server && node build/server",
     "lint": "eslint --ignore-path .gitignore .",
     "prebuild": "rimraf build/*",
-    "start": "node build/server --runtimeDir=/app"
+    "start": "node build/server"
   },
   "devDependencies": {
     "babel-cli": "6.23.0",
