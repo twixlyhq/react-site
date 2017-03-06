@@ -3,19 +3,17 @@
   "version": "0.0.0",
   "private": true,
   "engines": {
-    "node": "6.1.0",
-    "npm": "4.0.5"
+    "node": ">=4"
   },
   "scripts": {
     "analyze": "webpack --config webpack/webpack.client.babel.js --profile --json > stats.json",
     "build": "npm run build:client && npm run build:server",
-    "prestart": "npm run build:client && npm run build:server",
     "build:client": "webpack --progress --config webpack/webpack.client.babel.js",
     "build:server": "webpack --progress --config webpack/webpack.server.babel.js",
     "dev": "npm run build:server && node build/server",
     "lint": "eslint --ignore-path .gitignore .",
     "prebuild": "rimraf build/*",
-    "start": "node build/server"
+    "start": "node build/server --runtimeDir=/app"
   },
   "devDependencies": {
     "babel-cli": "6.23.0",
