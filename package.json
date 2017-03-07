@@ -10,10 +10,10 @@
     "build": "npm run build:client && npm run build:server",
     "build:client": "webpack --progress --config webpack/webpack.client.babel.js",
     "build:server": "webpack --progress --config webpack/webpack.server.babel.js",
-    "dev": "npm run build:server && node build/server",
+    "dev": "npm run build:server && node build/server.js",
     "lint": "eslint --ignore-path .gitignore .",
     "prebuild": "rimraf build/*",
-    "postinstall": "npm run build", 
+    "postinstall": "npm run build",
     "start": "node build/server"
   },
   "devDependencies": {
@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "assets-webpack-plugin": "3.5.1",
+    "async": "^2.1.5",
     "babel-cli": "6.23.0",
     "babel-loader": "6.3.2",
     "babel-plugin-transform-react-remove-prop-types": "0.3.2",
