@@ -1,6 +1,7 @@
 import React from 'react';
 
 const PostList = (props) => {
+  console.log(props.data);
   return (
     <div className="post">
       <img src="/assets/img/photo-1.jpg" alt="..." />

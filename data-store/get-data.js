@@ -3,7 +3,6 @@ import async from 'async';
 import cache from './cache';
 
 module.exports = function setData(cb) {
-  // console.log('This will only show once!');
   async.parallel({
     items: function(callback) {
       twixly.items({sort: 'meta.position'}, function(err, items) {
