@@ -10,7 +10,7 @@ import renderMiddleware from './middleware/render';
 import cacheData from './cache-data.js';
 
 const isProduction = process.env.NODE_ENV === 'production';
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 console.log(port);
 const app = express();
 
