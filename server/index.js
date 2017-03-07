@@ -27,7 +27,7 @@ if (isProduction) {
 
 app.use(morgan(isProduction ? 'combined' : 'dev'));
 app.use(express.static(path.resolve(__dirname, '../build')));
-app.use('/assets', express.static(path.resolve(path.join( __dirname, '../template/assets' ))));
+app.use('/assets', express.static(path.resolve(path.join( __dirname, '../app/assets' ))));
 app.use(cacheData);
 app.use(renderMiddleware);
 

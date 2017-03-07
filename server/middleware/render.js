@@ -6,7 +6,7 @@ import styleSheet from 'styled-components/lib/models/StyleSheet';
 
 import Helmet from "react-helmet";
 
-import App from '../../template/app';
+import App from '../../app/';
 
 export default function render(req, res) {
   const context = {};
@@ -14,7 +14,7 @@ export default function render(req, res) {
   const html = renderToString(
     <StaticRouter location={req.url} context={context}>
       <App location={{ getUrl: function() { return req.url } }} />
-    </StaticRouter>,
+    </StaticRouter>
   );
 
   if (context.url) {

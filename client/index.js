@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { render } from 'react-dom';
 
-import App from '../template/app';
+import App from '../app/';
 import getData from '../data-store/get-data';
 
 getData(function(err, data) {
