@@ -383,6 +383,14 @@
                 ]
               }
             }
+          },
+          "ui_schema": {
+            "ui:layout": {
+              "sidebar": [
+                "image",
+                "categories"
+              ]
+            }
           }
         },
         "meta": {
@@ -423,17 +431,6 @@
                 "type": "slug",
                 "title": "Slugg",
                 "populate_from": "title"
-              },
-              "posts": {
-                "type": "relationship",
-                "title": "Poster",
-                "multiple": true,
-                "data": [
-                  {
-                    "type": "items",
-                    "id": "blog-post"
-                  }
-                ]
               }
             }
           }
@@ -777,9 +774,9 @@
     {
       "data": {
         "type": "item-types",
-        "id": "c10-config",
+        "id": "twixly-config",
         "attributes": {
-          "title": "C10 - Konfiguration",
+          "title": "Twixly - Konfiguration",
           "schema": {
             "properties": {
               "title": {
@@ -792,11 +789,66 @@
                 "format": "json"
               }
             }
+          },
+          "ui_schema": {
+            "config": {
+              "ui:options": {
+                "height": 600
+              }
+            }
           }
         },
         "meta": {
           "position": 12,
           "status": "published"
+        }
+      }
+    },
+    {
+      "data": {
+        "type": "item-types",
+        "id": "cms-admin-menu-item",
+        "attributes": {
+          "title": "Admin Menu",
+          "description": "",
+          "display_field": "title",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "title": "Title"
+              },
+              "icon": {
+                "type": "string",
+                "title": "Icon"
+              },
+              "item_type_id": {
+                "type": "string",
+                "title": "Item Type ID"
+              }
+            },
+            "required": [
+              "title"
+            ]
+          },
+          "ui_schema": {
+            "item_type": {
+              "ui:placeholder": "Ex. blog-post"
+            },
+            "item_type_id": {
+              "ui:placeholder": "Ex: blog-post"
+            }
+          }
+        },
+        "meta": {
+          "position": 13,
+          "status": "published",
+          "options": {
+            "sort": "meta.position",
+            "sortable": true,
+            "hierarchical": true
+          }
         }
       }
     }
@@ -1037,27 +1089,6 @@
             "data": {
               "type": "item-types",
               "id": "start-page"
-            }
-          },
-          "position": 0,
-          "status": "published"
-        }
-      }
-    },
-    {
-      "data": {
-        "type": "items",
-        "id": "subpage-3",
-        "attributes": {
-          "title": "Sida 3",
-          "excerpt": "Sammanfattning",
-          "body": "Innehåll"
-        },
-        "meta": {
-          "item_type": {
-            "data": {
-              "type": "item-types",
-              "id": "sub-page"
             }
           },
           "position": 0,
@@ -1335,43 +1366,6 @@
     {
       "data": {
         "type": "items",
-        "id": "56ba709d9cd1962f7b30f02c",
-        "attributes": {
-          "title": "Sida 3",
-          "slug": "sida-3",
-          "path": "/sida-3"
-        },
-        "relationships": {
-          "page": {
-            "data": {
-              "type": "items",
-              "id": "subpage-3",
-              "meta": {
-                "item_type": {
-                  "data": {
-                    "type": "item-types",
-                    "id": "sub-page"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "meta": {
-          "item_type": {
-            "data": {
-              "type": "item-types",
-              "id": "nav-menu-item"
-            }
-          },
-          "position": 3,
-          "status": "published"
-        }
-      }
-    },
-    {
-      "data": {
-        "type": "items",
         "id": "subpage-1",
         "attributes": {
           "title": "Sida 1",
@@ -1604,10 +1598,155 @@
           "item_type": {
             "data": {
               "type": "item-types",
-              "id": "c10-config"
+              "id": "twixly-config"
             }
           },
           "position": 0,
+          "status": "published"
+        }
+      }
+    },
+    {
+      "data": {
+        "type": "items",
+        "attributes": {
+          "item_type_id": "nav-menu-item",
+          "icon": "file",
+          "title": "Sidor"
+        },
+        "meta": {
+          "item_type": {
+            "data": {
+              "id": "cms-admin-menu-item",
+              "type": "item-types"
+            }
+          },
+          "position": 0,
+          "status": "published"
+        }
+      }
+    },
+    {
+      "data": {
+        "type": "items",
+        "id": "admin-menu-blog",
+        "attributes": {
+          "item_type_id": "",
+          "icon": "book",
+          "title": "Blogg"
+        },
+        "meta": {
+          "item_type": {
+            "data": {
+              "id": "cms-admin-menu-item",
+              "type": "item-types"
+            }
+          },
+          "position": 1,
+          "status": "published"
+        }
+      }
+    },
+    {
+      "data": {
+        "type": "items",
+        "attributes": {
+          "item_type_id": "blog-post",
+          "icon": "book",
+          "title": "Poster"
+        },
+        "meta": {
+          "item_type": {
+            "data": {
+              "id": "cms-admin-menu-item",
+              "type": "item-types"
+            }
+          },
+          "position": 0,
+          "parent_id": "admin-menu-blog",
+          "status": "published"
+        }
+      }
+    },
+    {
+      "data": {
+        "type": "items",
+        "attributes": {
+          "title": "Kategorier",
+          "icon": "cog",
+          "item_type_id": "blog-post-category"
+        },
+        "meta": {
+          "item_type": {
+            "data": {
+              "type": "item-types",
+              "id": "cms-admin-menu-item"
+            }
+          },
+          "position": 1,
+          "parent_id": "admin-menu-blog",
+          "status": "published"
+        }
+      }
+    },
+    {
+      "data": {
+        "type": "items",
+        "id": "admin-menu-portfolio",
+        "attributes": {
+          "title": "Portfolio",
+          "icon": "book",
+          "item_type_id": ""
+        },
+        "meta": {
+          "item_type": {
+            "data": {
+              "type": "item-types",
+              "id": "cms-admin-menu-item"
+            }
+          },
+          "position": 3,
+          "status": "published"
+        }
+      }
+    },
+    {
+      "data": {
+        "type": "items",
+        "attributes": {
+          "title": "Poster",
+          "icon": "book",
+          "item_type_id": "portfolio-post"
+        },
+        "meta": {
+          "item_type": {
+            "data": {
+              "type": "item-types",
+              "id": "cms-admin-menu-item"
+            }
+          },
+          "position": 0,
+          "parent_id": "admin-menu-portfolio",
+          "status": "published"
+        }
+      }
+    },
+    {
+      "data": {
+        "type": "items",
+        "attributes": {
+          "item_type_id": "general-settings",
+          "icon": "cogs",
+          "title": "General settings"
+        },
+        "meta": {
+          "item_type": {
+            "data": {
+              "id": "cms-admin-menu-item",
+              "type": "item-types"
+            }
+          },
+          "position": 4,
           "status": "published"
         }
       }
