@@ -11,6 +11,7 @@ const Blog = (props) => {
     <div className="row">
       <div className="col-sm-9">
         <Route exact path={props.match.url} render={(routeProps) => <Posts {...routeProps} data={props.data} />} />
+        <Route exact path={`${props.match.url}/post/:slug`} render={(routeProps) => <Single {...routeProps} data={props.data} />} />
         <Route exact path={`${props.match.url}/category/:slug`} render={(routeProps) => <Category {...routeProps} data={props.data} />} />
       </div>
       <div className="col-sm-3">

@@ -9,8 +9,7 @@ module.exports = {
    * @return {object} Relevant bucket data
    */
   getPathData: function(url) {
-    var data = {};
-    data.pages = cache.get('data').pages;
+    var data = cache.get('data');
     data.start_page = data.pages['/'];
     data.current_page = data.pages[url];
     data.url = url;

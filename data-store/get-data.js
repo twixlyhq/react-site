@@ -13,6 +13,24 @@ module.exports = function setData(cb) {
         }
       }); 
     },
+    blog_post: function(callback) {
+      twixly.items({item_type: 'blog-post'}, function(err, items) {
+        if (err) {
+          callback(err);
+        } else {
+          callback(null, items);
+        }
+      }); 
+    },
+    blog_post_category: function(callback) {
+      twixly.items({item_type: 'blog-post-category'}, function(err, items) {
+        if (err) {
+          callback(err);
+        } else {
+          callback(null, items);
+        }
+      }); 
+    },
     items: function(callback) {
       twixly.items({sort: 'meta.position'}, function(err, items) {
         if (err) {
@@ -36,6 +54,8 @@ module.exports = function setData(cb) {
     if(err) return cb(err);
     
     var nav_menu_items = results.nav_menu_items;
+    var blog_post = results.blog_post;
+    var blog_post_category = results.blog_post_category;
     var items = results.items.data;
     var media = results.media.data;
     var item_dictionary = {};
@@ -73,9 +93,11 @@ module.exports = function setData(cb) {
     }
     
     var data = {
+      pages,
+      blog_post,
+      blog_post_category,
       item_dictionary,
       media_dictionary,
-      pages,
       version: Date.now()
     };
     
