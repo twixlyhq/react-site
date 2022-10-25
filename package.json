@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "engines": {
-    "node": ">=4"
+    "node": "12.0.0",
+    "npm": "6.9.0"
   },
   "scripts": {
     "analyze": "webpack --config webpack/webpack.client.babel.js --profile --json > stats.json",
@@ -41,7 +42,7 @@
     "react": "15.4.2",
     "react-dom": "15.4.2",
     "react-helmet": "3.2.3",
-    "react-router-dom": "4.0.0-beta.7",
+    "react-router-dom": "5.0.0",
     "rimraf": "2.6.1",
     "styled-components": "2.0.0-6",
     "superagent": "3.3.1",

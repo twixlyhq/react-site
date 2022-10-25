@@ -50,7 +50,7 @@ module.exports = function setData(cb) {
       });
     }
   },
-  function(err, results) { 
+  function(err, results) {
     if(err) return cb(err);
     
     var nav_menu_items = results.nav_menu_items;
